@@ -14,7 +14,7 @@ import br.edu.fatec.projetoec.model.OngTest;
 import br.edu.fatec.projetoec.service.OngTestService;
 
 @RestController
-@RequestMapping("/ongs")
+@RequestMapping("/ongstest")
 public class OngTestController {
 	
 		@Autowired
@@ -30,9 +30,9 @@ public class OngTestController {
 	
 	@GetMapping("/{id}")
 	public ResponseEntity<OngTest> find(@PathVariable(name = "id") Integer id){
-		Optional<OngTest> ong = this.ongService.findById(id);
-		if (ong.isPresent()) {
-			return ResponseEntity.ok(ong.get());
+		Optional<OngTest> ongtest = this.ongService.findById(id);
+		if (ongtest.isPresent()) {
+			return ResponseEntity.ok(ongtest.get());
 		} else {
 			return ResponseEntity.notFound().build();		}
 	}

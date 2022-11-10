@@ -11,26 +11,26 @@ import br.edu.fatec.projetoec.repository.OngTestRepository;
 @Service
 public class OngTestService {
 	
-	private final OngTestRepository ongRepository;
+	private final OngTestRepository ongTestRepository;
 	
-	public OngTestService(OngTestRepository ongRepository) {
-		this.ongRepository = ongRepository;
+	public OngTestService(OngTestRepository ongTestRepository) {
+		this.ongTestRepository = ongTestRepository;
 	}
 	
-	public OngTest save(OngTest ong) {
-		return this.ongRepository.save(ong);
+	public OngTest save(OngTest ongtest) {
+		return this.ongTestRepository.save(ongtest);
 	}
 	
 	public List<OngTest> findALL(){
-		return this.ongRepository.findAll();
+		return this.ongTestRepository.findAll();
 	}
 
 	public Optional<OngTest> findById(Integer id) {
-		return this.ongRepository.findById(id);
+		return this.ongTestRepository.findById(id);
 	}
 
 	public void delete(Integer id) {
-		ongRepository.deleteById(id);
+		ongTestRepository.deleteById(id);
 	}
 
 }
