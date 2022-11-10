@@ -9,7 +9,7 @@ import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "responsavel_ong")
+@Table(name = "responsavel")
 public class ResponsavelOng {
 	
 	@Id
@@ -18,8 +18,9 @@ public class ResponsavelOng {
 	private Integer id;
 	private String nome;
 	private String cpf;
-	@OneToOne(mappedBy = "responsavel_ong")
-	private Ong ong;
+	
+	@OneToOne(mappedBy = "responsavelOng")
+	Ong ong;
 	
 	
 	

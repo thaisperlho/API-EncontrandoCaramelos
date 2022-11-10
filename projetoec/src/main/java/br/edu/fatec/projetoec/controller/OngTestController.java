@@ -18,19 +18,19 @@ import br.edu.fatec.projetoec.service.OngTestService;
 public class OngTestController {
 	
 		@Autowired
-		private OngTestService ongService;
+		private OngTestService ongTestService;
 		
 		
 	@GetMapping	
 	public ResponseEntity<List<OngTest>> findALL(){
 		
-		List<OngTest> list = ongService.findALL();
+		List<OngTest> list = ongTestService.findALL();
 		return ResponseEntity.ok(list);
 	}
 	
 	@GetMapping("/{id}")
 	public ResponseEntity<OngTest> find(@PathVariable(name = "id") Integer id){
-		Optional<OngTest> ongtest = this.ongService.findById(id);
+		Optional<OngTest> ongtest = this.ongTestService.findById(id);
 		if (ongtest.isPresent()) {
 			return ResponseEntity.ok(ongtest.get());
 		} else {

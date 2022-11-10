@@ -16,7 +16,8 @@ public class TipoAjuda {
 	@Column(name = "id")
 	private Integer id;
 	private String tipoAjuda;
-	@OneToOne(mappedBy = "tipo_ajuda")
+	
+	@OneToOne(mappedBy = "tipoAjuda")
 	private Ong ong;
 	
 	public TipoAjuda() {
