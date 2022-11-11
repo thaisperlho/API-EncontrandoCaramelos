@@ -8,22 +8,21 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "tipo_ajuda")
-public class TipoAjuda {
+@Table(name = "especie_de_pets")
+public class EspecieDePets {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	@Column(name = "id")
 	private Integer id;
-	private String tipoAjuda;
+	private String especie;
 	
-	
-	public TipoAjuda() {
+	public EspecieDePets() {
 		
 	}
 	
-	public TipoAjuda(Integer id, String tipoAjuda) {
+	public EspecieDePets(Integer id, String especie) {
 		this.id = id;
-		this.tipoAjuda = tipoAjuda;
+		this.especie = especie;
 	}
 	
 	public Integer getId() {
@@ -32,12 +31,13 @@ public class TipoAjuda {
 	public void setId(Integer id) {
 		this.id = id;
 	}
-	public String getTipoAjuda() {
-		return tipoAjuda;
+	public String getEspecie() {
+		return especie;
 	}
-	public void setTipoAjuda(String tipoAjuda) {
-		this.tipoAjuda = tipoAjuda;
+	public void setEspecie(String especie) {
+		this.especie = especie;
 	}
-
 	
+	
+
 }

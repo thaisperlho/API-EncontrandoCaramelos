@@ -7,6 +7,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
@@ -26,16 +27,24 @@ public class Ong {
 	@JoinColumn(name = "fk_id_usuario", referencedColumnName = "id" )
 	private Usuario usuario;
 	@OneToOne(cascade = CascadeType.ALL)
-	@JoinColumn(name = "fk_id_tipo_ajuda", referencedColumnName = "id" )
-	private TipoAjuda tipoAjuda;
-	@OneToOne(cascade = CascadeType.ALL)
 	@JoinColumn(name = "fk_id_responsavel", referencedColumnName = "id" )
 	private ResponsavelOng responsavelOng;
+	@ManyToOne
+	@JoinColumn(name = "fk_id_tipo_ajuda")
+	private TipoAjuda tipoAjuda;
 	
 	
 	
 	
 	
+	public TipoAjuda getTipoAjuda() {
+		return tipoAjuda;
+	}
+
+	public void setTipoAjuda(TipoAjuda tipoAjuda) {
+		this.tipoAjuda = tipoAjuda;
+	}
+
 	public Ong() {
 	}
 
@@ -47,8 +56,8 @@ public class Ong {
 		this.telefone = telefone;
 		this.site = site;
 		this.usuario = usuario;
-		this.tipoAjuda = tipoAjuda;
 		this.responsavelOng = responsavelOng;
+		this.tipoAjuda = tipoAjuda;
 	}
 	
 	public Integer getId() {
@@ -87,12 +96,7 @@ public class Ong {
 	public void setUsuario(Usuario usuario) {
 		this.usuario = usuario;
 	}
-	public TipoAjuda getTipoAjuda() {
-		return tipoAjuda;
-	}
-	public void setTipoAjuda(TipoAjuda tipoAjuda) {
-		this.tipoAjuda = tipoAjuda;
-	}
+
 	public ResponsavelOng getResponsavelOng() {
 		return responsavelOng;
 	}
