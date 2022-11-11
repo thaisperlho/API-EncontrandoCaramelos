@@ -11,7 +11,7 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name = "pets")
-public class Pets {
+public class Pet {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
@@ -34,11 +34,11 @@ public class Pets {
 	private EspecieDePets especie;
 	
 	
-	public Pets() {
+	public Pet() {
 		
 	}
 	
-	public Pets(Integer id, String nome, Integer idade, String sexo, String raca, String cor, String obsHistorico,
+	public Pet(Integer id, String nome, Integer idade, String sexo, String raca, String cor, String obsHistorico,
 			Boolean vacinado, Boolean vermifigado, Boolean castrado, Ong ong, EspecieDePets especie) {
 		this.id = id;
 		this.nome = nome;
