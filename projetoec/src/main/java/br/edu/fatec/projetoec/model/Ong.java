@@ -16,13 +16,16 @@ import javax.persistence.Table;
 public class Ong {
 	
 	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "id")
 	private Integer id;
 	private String nome;
 	private String cnpj;
 	private String telefone;
 	private String site;
+	private Boolean entrega;
+
+	
 	@OneToOne(cascade = CascadeType.ALL)
 	@JoinColumn(name = "fk_id_usuario", referencedColumnName = "id" )
 	private Usuario usuario;
@@ -32,8 +35,6 @@ public class Ong {
 	@ManyToOne
 	@JoinColumn(name = "fk_id_tipo_ajuda")
 	private TipoAjuda tipoAjuda;
-	
-	
 	
 	
 	
@@ -48,7 +49,7 @@ public class Ong {
 	public Ong() {
 	}
 
-	public Ong(Integer id, String nome, String cnpj, String telefone, String site, Usuario usuario, TipoAjuda tipoAjuda,
+	public Ong(Integer id, String nome, String cnpj, String telefone, String site, Usuario usuario, Boolean entrega, TipoAjuda tipoAjuda,
 			ResponsavelOng responsavelOng) {
 		this.id = id;
 		this.nome = nome;
@@ -58,6 +59,7 @@ public class Ong {
 		this.usuario = usuario;
 		this.responsavelOng = responsavelOng;
 		this.tipoAjuda = tipoAjuda;
+		this.entrega = entrega;
 	}
 	
 	public Integer getId() {
@@ -88,7 +90,15 @@ public class Ong {
 		return site;
 	}
 	public void setSite(String site) {
-		this.site = site;
+		this.site = site;	
+	}
+		
+	public Boolean getEntrega() {
+		return entrega;
+	}
+
+	public void setEntrega(Boolean entrega) {
+		this.entrega = entrega;
 	}
 	public Usuario getUsuario() {
 		return usuario;
