@@ -15,7 +15,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import br.edu.fatec.projetoec.model.Adotante;
-import br.edu.fatec.projetoec.model.Pet;
 import br.edu.fatec.projetoec.service.AdotanteService;
 
 @RestController
