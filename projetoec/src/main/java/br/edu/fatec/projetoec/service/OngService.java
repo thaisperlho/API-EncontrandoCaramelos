@@ -21,6 +21,7 @@ public class OngService {
 		return this.ongRepository.save(ong);
 	}
 	
+	
 	public List<Ong> findALL(){
 		return this.ongRepository.findAll();
 	}
