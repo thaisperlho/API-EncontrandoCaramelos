@@ -15,15 +15,15 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import br.edu.fatec.projetoec.model.EnderecoOng;
-import br.edu.fatec.projetoec.model.Ong;
-import br.edu.fatec.projetoec.service.OngService;
+import br.edu.fatec.projetoec.service.EndOngservice;
+
 
 @RestController
-@RequestMapping(name = "/andressOngs")
+@RequestMapping("/andress")
 public class EndOngController {
 	
 	@Autowired
-	private EndOngService endOngService;
+	private EndOngservice endOngService;
 		
 		
 	@GetMapping	
@@ -47,10 +47,10 @@ public class EndOngController {
 	public ResponseEntity<EnderecoOng> edit(@PathVariable(name = "id") Integer id, @RequestBody EnderecoOng endOng){
 		  Optional<EnderecoOng> endOngActual = this.endOngService.findById(id);
 		  if(endOngActual.isPresent()) {
-			  endOngActual.get().
-			  endOngActual.get().
-			  endOngActual.get().
-			  return ResponseEntity.ok(this.endOngService.save(ongActual.get()));
+			  endOngActual.get().setBairro(endOng.getBairro());
+			  endOngActual.get().setCep(endOng.getCep());
+			  endOngActual.get().setCidade(endOng.getCidade());
+			  return ResponseEntity.ok(this.endOngService.save(endOngActual.get()));
 		  } else {
 			  return ResponseEntity.notFound().build();
 		  }
