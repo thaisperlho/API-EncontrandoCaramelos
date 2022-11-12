@@ -14,7 +14,7 @@ import javax.persistence.Table;
 public class Pet {
 	
 	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "id")
 	private Integer id;
 	private String nome;
@@ -24,7 +24,7 @@ public class Pet {
 	private String cor;
 	private String obsHistorico;
 	private Boolean vacinado;
-	private Boolean vermifigado;
+	private Boolean vermifugado;
 	private Boolean castrado;
 	@ManyToOne
 	@JoinColumn(name = "fk_id_ongs")
@@ -39,7 +39,7 @@ public class Pet {
 	}
 	
 	public Pet(Integer id, String nome, Integer idade, String sexo, String raca, String cor, String obsHistorico,
-			Boolean vacinado, Boolean vermifigado, Boolean castrado, Ong ong, EspecieDePets especie) {
+			Boolean vacinado, Boolean vermifugado, Boolean castrado, Ong ong, EspecieDePets especie) {
 		this.id = id;
 		this.nome = nome;
 		this.idade = idade;
@@ -48,7 +48,7 @@ public class Pet {
 		this.cor = cor;
 		this.obsHistorico = obsHistorico;
 		this.vacinado = vacinado;
-		this.vermifigado = vermifigado;
+		this.vermifugado = vermifugado;
 		this.castrado = castrado;
 		this.ong = ong;
 		this.especie = especie;
@@ -101,11 +101,11 @@ public class Pet {
 	public void setVacinado(Boolean vacinado) {
 		this.vacinado = vacinado;
 	}
-	public Boolean getVermifigado() {
-		return vermifigado;
+	public Boolean getVermifugado() {
+		return vermifugado;
 	}
-	public void setVermifigado(Boolean vermifigado) {
-		this.vermifigado = vermifigado;
+	public void setVermifugado(Boolean vermifugado) {
+		this.vermifugado = vermifugado;
 	}
 	public Boolean getCastrado() {
 		return castrado;
