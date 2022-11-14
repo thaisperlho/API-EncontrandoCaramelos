@@ -19,7 +19,6 @@ public class EndOngservice {
 		return this.endOngRepository.save(endOng);
 	}
 	
-	
 	public List<EnderecoOng> findALL(){
 		return this.endOngRepository.findAll();
 	}
