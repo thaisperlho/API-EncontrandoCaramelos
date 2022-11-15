@@ -15,12 +15,12 @@ import javax.persistence.Table;
 public class EnderecoAdotantes {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column (name = "id")
     private Integer id;
     private String cep;
     private String bairro;
-    private String logadouro;
+    private String logradouro;
     private String cidade;
     private String estado;
     private String complemento;
@@ -39,11 +39,11 @@ public class EnderecoAdotantes {
     }
 
     //CONSTRUTOR QUE RECEBE PARAMETROS
-    public EnderecoAdotantes(Integer id, String cep, String bairro, String logadouro, String cidade, String estado, String complemento, Integer numero, Adotante adotante){
+    public EnderecoAdotantes(Integer id, String cep, String bairro, String logradouro, String cidade, String estado, String complemento, Integer numero, Adotante adotante){
         this.id = id;
         this.cep = cep;
         this.bairro = bairro;
-        this.logadouro  = logadouro;
+        this.logradouro  = logradouro;
         this.cidade = cidade;
         this.estado = estado;
         this.complemento = complemento;
@@ -77,12 +77,12 @@ public class EnderecoAdotantes {
         this.bairro = bairro;
     }
 
-    public String getLogadouro() {
-        return logadouro;
+    public String getlogradouro() {
+        return logradouro;
     }
 
-    public void setLogadouro(String logadouro) {
-        this.logadouro = logadouro;
+    public void setlogradouro(String logradouro) {
+        this.logradouro = logradouro;
     }
 
     public String getCidade() {
