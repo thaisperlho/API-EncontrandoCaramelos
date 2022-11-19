@@ -6,6 +6,7 @@ import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -59,5 +60,16 @@ public class EndAdotanteController {
 		  EnderecoAdotantes endAdotanteCreated = endAdotanteService.save(adotante);
 		  
 		  return ResponseEntity.status(HttpStatus.CREATED).body(endAdotanteCreated);
+	  }
+	  
+	  @DeleteMapping("/{id}")
+	  public ResponseEntity<?> delete(@PathVariable(name = "id") Integer id){
+		  Optional<EnderecoAdotantes> endAdotanteActual = this.endAdotanteService.findById(id);
+		  if(endAdotanteActual.isPresent()) {
+			  endAdotanteService.delete(id);
+			  return ResponseEntity.ok(null);
+		  } else {
+			  return ResponseEntity.notFound().build();
+		  }
 	  }
 }
