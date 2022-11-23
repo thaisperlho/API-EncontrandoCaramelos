@@ -48,6 +48,12 @@ public class PetController {
 		  if(petActual.isPresent()) {
 			  petActual.get().setNome(pet.getNome());
 			  petActual.get().setIdade(pet.getIdade());
+			  petActual.get().setSexo(pet.getSexo());
+			  petActual.get().setRaca(pet.getRaca());
+			  petActual.get().setCor(pet.getCor());
+			  petActual.get().setVacinado(pet.getVacinado());
+			  petActual.get().setVermifugado(pet.getVermifugado());
+			  petActual.get().setCastrado(pet.getCastrado());
 			  petActual.get().setObsHistorico(pet.getObsHistorico());
 			  return ResponseEntity.ok(this.petService.save(petActual.get()));
 		  } else {
